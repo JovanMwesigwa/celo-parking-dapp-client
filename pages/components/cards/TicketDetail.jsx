@@ -9,10 +9,10 @@ const TicketDetail = ({ position }) => {
         <h1 className="text-gray-200 font-medium">Ticket Info</h1>
       </div>
 
-      <div className="flex w-full flex-col p-4 text-gray-100 justify-evenly">
+      <div className="flex w-full flex-col p-4 text-gray-100 ">
         {/*  */}
 
-        <div className="flex flex-col flex-1 ">
+        <div className="flex flex-col flex-1 py-6">
           <h3 className="text-sm font-medium">
             Ticket No: <span className="text-lg font-medium ml-2">2683</span>
           </h3>
@@ -42,7 +42,7 @@ const TicketDetail = ({ position }) => {
         </div>
         <div className="w-full h-1 bg-lightBg my-6"></div>
 
-        <div className="flex flex-1 flex-col">
+        <div className="flex  flex-col justify-center ">
           <button className="p-3 bg-blue-600 rounded-full">PAY</button>
         </div>
       </div>
