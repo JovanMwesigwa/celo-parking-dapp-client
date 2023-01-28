@@ -2,19 +2,26 @@ import Lottie from 'lottie-react'
 import LiveIcon from '../../../public/assets/live.json'
 import doneIcon from '../../../public/assets/done.json'
 
-const TicketCard = ({ cleared }) => {
+const TicketCard = ({ item, cleared, selectTicket }) => {
   return (
-    <div className="w-full flex flex-row bg-lightBg p-4 m-3 cursor-pointer justify-between">
+    <div
+      onClick={() => selectTicket(item)}
+      className="w-full flex flex-row bg-lightBg p-4 m-3 cursor-pointer justify-between"
+    >
       <div className="flex flex-col">
-        <h1 className="text-white text-sm font-medium">Tix No: 1245</h1>
-        <p className="text-gray-400 text-xs font-thin">12-01-2023</p>
+        <h1 className="text-white text-sm font-medium">
+          Tix No: {item.ticketNumber}
+        </h1>
+        <p className="text-gray-400 text-xs font-thin">{item.issuedAt}</p>
       </div>
       <div className="flex flex-col">
-        <h1 className="text-white text-sm font-medium">$500</h1>
-        <p className="text-gray-400 text-xs font-thin">Ntinda</p>
+        <h1 className="text-white text-sm font-medium">${item.price}</h1>
+        <p className="text-gray-400 text-xs font-thin">{item.location}</p>
       </div>
       <div className="flex flex-col">
-        <h1 className="text-white text-sm font-medium">UAJ-543-J</h1>
+        <h1 className="text-white text-sm font-medium">
+          {item.carNumberPlate}
+        </h1>
         <div className="flex flex-row items-center justify-between">
           {cleared ? (
             <>

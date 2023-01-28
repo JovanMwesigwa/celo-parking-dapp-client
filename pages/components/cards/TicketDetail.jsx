@@ -1,4 +1,4 @@
-const TicketDetail = ({ position }) => {
+const TicketDetail = ({ position, ticket }) => {
   return (
     <div
       className={`flex w-full flex-col items-center rounded-lg ${
@@ -14,25 +14,32 @@ const TicketDetail = ({ position }) => {
 
         <div className="flex flex-col flex-1 py-6">
           <h3 className="text-sm font-medium">
-            Ticket No: <span className="text-lg font-medium ml-2">2683</span>
+            Ticket No:{' '}
+            <span className="text-lg font-medium ml-2">
+              {ticket.ticketNumber}
+            </span>
           </h3>
 
           <h3 className="text-sm font-medium">
             Vehicle Plate:{' '}
-            <span className="text-lg font-medium ml-2">UAJ-719-K</span>
+            <span className="text-lg font-medium ml-2">
+              {ticket.carNumberPlate}
+            </span>
           </h3>
 
           <h3 className="text-sm font-medium">
-            Location: <span className="text-lg font-medium ml-2">Ntinda</span>
+            Location:{' '}
+            <span className="text-lg font-medium ml-2">{ticket.location}</span>
           </h3>
 
           <h3 className="text-sm font-medium">
-            Price: <span className="text-lg font-medium ml-2">$500</span>
+            Price:{' '}
+            <span className="text-lg font-medium ml-2">${ticket.price}</span>
           </h3>
 
           <h3 className="text-sm font-medium">
             Date:{' '}
-            <span className="text-lg font-medium ml-2">12 - 01 - 2023</span>
+            <span className="text-lg font-medium ml-2">{ticket.issuedAt}</span>
           </h3>
 
           <h3 className="text-sm font-medium">
@@ -42,9 +49,11 @@ const TicketDetail = ({ position }) => {
         </div>
         <div className="w-full h-1 bg-lightBg my-6"></div>
 
-        <div className="flex  flex-col justify-center ">
-          <button className="p-3 bg-blue-600 rounded-full">PAY</button>
-        </div>
+        {!ticket.isPaid && (
+          <div className="flex  flex-col justify-center ">
+            <button className="p-3 bg-blue-600 rounded-full">PAY</button>
+          </div>
+        )}
       </div>
       {/*  */}
     </div>
